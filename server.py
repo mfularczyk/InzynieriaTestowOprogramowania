@@ -1,22 +1,24 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import socket
+CRED = '\033[91m'
+CGREEN = '\033[32m'
+CBLUE = '\033[34m'
+CEND = '\033[0m'
 
-def Main():
-    host = '127.0.0.1'
-    port = 5000
+def menu():
+    print("#1 Check clients status")
+    print("#2 Execute tests")
+    input_number = input(CBLUE + "Choose option: " + CEND)
+    
+    try:
+        val = int(input_number)
+        if(val == 1):
+            print(CGREEN + "Checking clients statuses..." + CEND)
+        elif(val == 2):
+            print(CGREEN + "Executing tests..." + CEND)
+        else:
+            print(CRED + "Unknown option. Please insert correct number!" + CEND)
+    except ValueError:
+        print(CRED + "Only digits allowed ;)" + CEND)
 
-    s = socket.socket()
-    s.bind((host, port))
-
-    print('Waiting for connection...')
-
-    s.listen(1)
-    c, addr = s.accept()
-
-    print('Connection from: ' + str(addr))
-
-    c.close()
-
-if __name__ == '__main__':
-    Main()
+menu()
