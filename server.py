@@ -1,4 +1,3 @@
-
 #!/usr/bin/python
 
 import socket
@@ -8,14 +7,14 @@ def Main():
     port = 5000
 
     s = socket.socket()
-    s.connect((host, port))
+    s.bind((host, port))
 
-    print 'Waiting for connection...'
+    print('Waiting for connection...')
 
     s.listen(1)
     c, addr = s.accept()
 
-    print "Connection from: " + str(addr)
+    print('Connection from: ' + str(addr))
 
     c.close()
 
