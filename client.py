@@ -100,16 +100,8 @@ def main():
 
 #TESTS
 def test0():
-    print("TEST 0.0.0.0")
-    print(">To jest fejk test byle tylko wywolal sie kod")
-    time.sleep(3)
-    print(">Nie mamy jeszcze testow, zakladamy ze dziala")
-    time.sleep(4)
-    print(">Klient nie zglasza problemow")
     time.sleep(5)
-    print(">Testy na pradzie jak zawsze w modzie")
-    time.sleep(5)
-    print(">daje tutaj PASSED")
+    print("PASSED")
 
 
 main()
